@@ -1,0 +1,20 @@
+services:
+  chinese-holiday-api:
+    image: ysjiang4869/chinese-holiday-api:2026.09.30
+    container_name: chinese-holiday-api
+    restart: "no"
+    ports:
+      - "18300:8080"
+    volumes:
+      - /share/Public/container/chinese-holiday-api:/data
+    environment:
+      DATA_DIR: /data
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    logging:
+      driver: local
+      options:
+        max-size: "10m"
+        max-file: "3"

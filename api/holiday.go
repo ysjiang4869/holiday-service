@@ -145,9 +145,8 @@ func judgeMonth(date time.Time) ([]DateDetail, error) {
 		errMsg := fmt.Sprintf("无法获取%v年的数据", year)
 		log.Println(errMsg)
 		log.Println(err)
-		return nil, fmt.Errorf(errMsg)
+		return nil, fmt.Errorf("%s", errMsg)
 	}
-	
 
 	monthMap := yearMap[month]
 	res := []DateDetail{}
